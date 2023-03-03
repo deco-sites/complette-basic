@@ -11,10 +11,11 @@ import * as $3 from "./routes/index.tsx";
 import * as $$0 from "./islands/LiveControls.tsx";
 import * as $$$0 from "./sections/GetStarted.tsx";
 import * as $$$1 from "./sections/Head.tsx";
-import * as $$$2 from "./sections/Informations.tsx";
-import * as $$$3 from "./sections/Markdown.tsx";
-import * as $$$4 from "./sections/QuillText.tsx";
-import * as $$$5 from "./sections/SimpleHeader.tsx";
+import * as $$$2 from "./sections/Header.tsx";
+import * as $$$3 from "./sections/Informations.tsx";
+import * as $$$4 from "./sections/Markdown.tsx";
+import * as $$$5 from "./sections/QuillText.tsx";
+import * as $$$6 from "./sections/SimpleHeader.tsx";
 import * as $$$$0 from "./functions/LoadGitHubRaw.ts";
 
 const manifest: DecoManifest = {
@@ -28,10 +29,11 @@ const manifest: DecoManifest = {
   sections: {
     "./sections/GetStarted.tsx": $$$0,
     "./sections/Head.tsx": $$$1,
-    "./sections/Informations.tsx": $$$2,
-    "./sections/Markdown.tsx": $$$3,
-    "./sections/QuillText.tsx": $$$4,
-    "./sections/SimpleHeader.tsx": $$$5,
+    "./sections/Header.tsx": $$$2,
+    "./sections/Informations.tsx": $$$3,
+    "./sections/Markdown.tsx": $$$4,
+    "./sections/QuillText.tsx": $$$5,
+    "./sections/SimpleHeader.tsx": $$$6,
   },
   functions: { "./functions/LoadGitHubRaw.ts": $$$$0 },
   schemas: {
@@ -62,19 +64,31 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "description": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Description",
           },
           "url": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Url",
           },
           "imageUrl": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Image Url",
           },
           "faviconUrl": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Favicon Url",
           },
           "styleUrls": {
@@ -85,18 +99,71 @@ const manifest: DecoManifest = {
             "title": "Style Urls",
           },
           "themeColor": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Theme Color",
           },
         },
         "required": [
           "title",
-          "description",
-          "url",
-          "imageUrl",
-          "faviconUrl",
-          "styleUrls",
-          "themeColor",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Header.tsx": {
+      "inputSchema": {
+        "title": " Header",
+        "type": "object",
+        "properties": {
+          "logo": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Logo",
+          },
+          "minimumLogo": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Minimum Logo",
+          },
+          "menuItems": {
+            "title": "Menu Items",
+            "type": "array",
+            "items": {
+              "title": "MenuItems",
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text",
+                },
+                "type": {
+                  "type": "string",
+                  "title": "Type",
+                },
+                "icon": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Icon",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+              },
+              "required": [
+                "text",
+                "type",
+                "href",
+              ],
+            },
+          },
+        },
+        "required": [
+          "logo",
+          "minimumLogo",
+          "menuItems",
         ],
       },
       "outputSchema": null,

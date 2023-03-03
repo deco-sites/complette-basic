@@ -9,16 +9,21 @@ export default {
         xl: "1280px",
         "2xl": "1536px",
       },
-      colors: {
-        primary: "#2FD180",
-        "primary-dark": "#003232",
-        "primary-light": "#C5FFE9",
-        transparent: "transparent",
-      },
       fontFamily: {
-        sans: ["Albert Sans", "sans-serif"],
-        serif: ["serif"],
-      },
+        'roboto': ['Roboto', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
+        'josefin': ['"Josefin Sans"', 'sans-serif'],
+        'poiret-one': ['"Poiret One"', 'cursive']
+       },
+       colors: {
+         'complette-purple': "#5A43A5",
+         'complette-gray': "#585858",
+         'complette-gray-light': "#969696",
+         'complette-purple-light': "#8D78D0"
+       },
+       fontSize: {
+         '1xs': '9px'
+       }
     },
   },
 };
